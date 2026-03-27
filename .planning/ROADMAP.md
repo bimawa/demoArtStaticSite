@@ -77,7 +77,10 @@
 3. Page loads in under 3 seconds on standard connection
 4. All images have explicit width/height attributes to prevent layout shifts
 
-**Plans:** TBD
+**Plans:** 2 plans
+
+- [x] 03-01-PLAN.md — WebP with JPEG fallback using picture elements
+- [x] 03-02-PLAN.md — Performance verification and CSS optimization
 
 ---
 
