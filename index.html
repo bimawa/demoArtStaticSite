@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Artist portfolio featuring selected works, artist background, and a direct contact form."
+    />
+    <title>Artist Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" id="top">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="#hero">Artist Portfolio</a>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#site-footer">Footer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Artist Name</h1>
+        <p class="tagline">Visual Artist</p>
+
+        <div id="about" class="about-copy" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          <p>
+            I create contemporary visual narratives inspired by changing city textures,
+            natural rhythms, and memory. My work combines layered materials and
+            restrained color to explore movement, stillness, and emotional contrast.
+          </p>
+          <p>
+            Through each series, I focus on atmosphere and detail, inviting viewers to
+            slow down and notice subtle relationships between form, light, and surface.
+          </p>
+        </div>
+      </section>
+
+      <section id="gallery" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading">Gallery</h2>
+        <p class="section-intro">Featured and selected artworks.</p>
+
+        <div class="gallery-grid">
+          <figure class="artwork featured-artwork">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3C/svg%3E"
+              alt="Tidal Memory, 2024, mixed media on canvas"
+              width="1200"
+              height="800"
+            />
+            <figcaption>
+              <h3>Tidal Memory</h3>
+              <p>2024</p>
+              <p>Mixed media on canvas</p>
+            </figcaption>
+          </figure>
+
+          <figure class="artwork">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3C/svg%3E"
+              alt="Quiet Geometry, 2024, acrylic on panel"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+            <figcaption>
+              <h3>Quiet Geometry</h3>
+              <p>2024</p>
+              <p>Acrylic on panel</p>
+            </figcaption>
+          </figure>
+
+          <figure class="artwork">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3C/svg%3E"
+              alt="Fragments of Light, 2024, ink and pigment"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+            <figcaption>
+              <h3>Fragments of Light</h3>
+              <p>2024</p>
+              <p>Ink and pigment</p>
+            </figcaption>
+          </figure>
+
+          <figure class="artwork">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3C/svg%3E"
+              alt="Still Current, 2024, digital collage print"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+            <figcaption>
+              <h3>Still Current</h3>
+              <p>2024</p>
+              <p>Digital collage print</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          Interested in exhibitions, commissions, or collaborations? Send a message and
+          I will get back to you soon.
+        </p>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="site-footer">
+      <p>© 2024 Artist Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
