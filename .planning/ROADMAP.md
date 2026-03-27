@@ -55,7 +55,11 @@
 7. Consistent spacing and visual hierarchy throughout
 8. Page remains functional and visually intact at all breakpoints
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+- [x] 02-01-PLAN.md — CSS Foundation & Design Tokens
+- [x] 02-02-PLAN.md — Typography & Component Styling
+- [x] 02-03-PLAN.md — Responsive Design & Breakpoints
 
 ---
 
