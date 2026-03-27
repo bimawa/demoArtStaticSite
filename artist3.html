@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Галерея Художников</title>
+    <title>Художник 3 - Галерея</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,7 +12,7 @@
   <body>
     <div id="password-gate">
       <div class="gate-card">
-        <h1>Галерея Художников</h1>
+        <h1>Художник 3</h1>
         <p>Введите пароль для доступа</p>
         <input type="password" id="gate-password" placeholder="Пароль" />
         <button type="button" id="gate-submit">Войти</button>
@@ -35,29 +35,61 @@
       </header>
 
       <main>
-        <section class="hero">
-          <h1>Галерея Современных Художников</h1>
-          <p class="tagline">Виртуальная выставка работ трёх талантливых художников</p>
+        <section class="artist-header">
+          <h1>Художник 3</h1>
+          <p class="artist-title">Цифровое искусство</p>
         </section>
 
-        <section class="artists-list">
-          <h2>Наши Художники</h2>
-          <div class="artist-cards">
-            <a href="artist1.html" class="artist-card">
-              <div class="artist-card-image">🎨</div>
-              <h3>Художник 1</h3>
-              <p>Живопись</p>
-            </a>
-            <a href="artist2.html" class="artist-card">
-              <div class="artist-card-image">🖼️</div>
-              <h3>Художник 2</h3>
-              <p>Графика</p>
-            </a>
-            <a href="artist3.html" class="artist-card">
-              <div class="artist-card-image">✨</div>
-              <h3>Художник 3</h3>
-              <p>Цифровое искусство</p>
-            </a>
+        <section>
+          <div class="artist-bio">
+            <p>Биография художника. Здесь будет информация о творческом пути, достижениях, выставках и вдохновении.</p>
+          </div>
+        </section>
+
+        <section class="artist-section">
+          <h2>Работы</h2>
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img src="https://images.pexels.com/photos/36680617/pexels-photo-36680617.jpeg" alt="Работа 1" />
+              <figcaption>
+                <h3>Название работы 1</h3>
+                <p>2024, цифровая графика</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://images.pexels.com/photos/36430103/pexels-photo-36430103.jpeg" alt="Работа 2" />
+              <figcaption>
+                <h3>Название работы 2</h3>
+                <p>2024, 3D рендеринг</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://cdn.pixabay.com/photo/2023/05/11/13/21/digitalart-7986416_1280.jpg" alt="Работа 3" />
+              <figcaption>
+                <h3>Название работы 3</h3>
+                <p>2023, цифровая живопись</p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="artist-section">
+          <h2>Видео</h2>
+          <div class="video-grid">
+            <figure class="video-item">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 1" allowfullscreen></iframe>
+              <figcaption>
+                <h3>Создание цифрового арта</h3>
+                <p>Работа в Photoshop</p>
+              </figcaption>
+            </figure>
+            <figure class="video-item">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 2" allowfullscreen></iframe>
+              <figcaption>
+                <h3>3D моделирование</h3>
+                <p>Процесс создания</p>
+              </figcaption>
+            </figure>
           </div>
         </section>
       </main>
@@ -77,6 +109,7 @@
       };
 
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const pageKey = currentPage.replace('.html', '');
       
       function checkPassword(password) {
         if (password === passwords.main) {
@@ -108,20 +141,26 @@
       const savedAuth = localStorage.getItem('gallery-auth');
       
       if (savedAuth === 'main') {
-        showContent(savedAuth);
+        window.location.href = 'index.html';
       } else if (savedAuth === 'artist1') {
         window.location.href = 'artist1.html';
       } else if (savedAuth === 'artist2') {
         window.location.href = 'artist2.html';
       } else if (savedAuth === 'artist3') {
-        window.location.href = 'artist3.html';
+        showContent(savedAuth);
+        document.querySelector('.site-nav li:nth-child(2)').style.display = 'none';
+        document.querySelector('.site-nav li:nth-child(3)').style.display = 'none';
       }
 
       document.getElementById('gate-submit').addEventListener('click', function() {
         const password = document.getElementById('gate-password').value;
         const allowed = checkPassword(password);
         if (allowed) {
-          showContent(allowed);
+          if (allowed === 'main') {
+            window.location.href = 'index.html';
+          } else {
+            showContent(allowed);
+          }
         } else {
           document.getElementById('gate-error').classList.remove('hidden');
         }
